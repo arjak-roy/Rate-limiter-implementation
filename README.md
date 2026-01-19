@@ -1,7 +1,7 @@
 # Rate Limiting Demonstration: Leaky vs. Token Bucket 🪣
 
 This is a simple demonstration project exploring two fundamental rate-limiting algorithms used in system design: **Leaky Bucket** and **Token Bucket**.
-
+[Refer to this blog for a detailed understanding](https://blog.algomaster.io/p/rate-limiting-algorithms-explained-with-code)
 > [!IMPORTANT]  
 > **Note:** This repository is for **demonstration and educational purposes only**. It is not intended for production use.
 
@@ -18,11 +18,13 @@ Rate limiting is a strategy used to limit network traffic. It is implemented at 
 * **Concept:** Processes requests at a constant, fixed rate.
 * **Metaphor:** A bucket with a small hole at the bottom. Water (requests) can enter at any speed, but it "leaks" (processes) at a steady pace. If the bucket is full, new requests are discarded.
 * **Best for:** Consistent, predictable traffic shaping.
+![0815d30e-dc9c-4ff4-9eb8-ac76d21ba52d_1048x684](https://github.com/user-attachments/assets/03e46789-1c9e-44d4-9cd9-b81d3ccedd93)
 
 ### 2. Token Bucket Algorithm
 * **Concept:** Allows for a certain amount of "bursty" traffic by accumulating tokens.
 * **Metaphor:** A bucket is filled with tokens at a fixed rate. Each request consumes one token. If tokens are available, the request is processed immediately.
 * **Best for:** Systems that need to handle occasional spikes in traffic while maintaining an average rate.
+![2955cacb-e76f-4606-b257-84718268524d_1132x956](https://github.com/user-attachments/assets/9ffa9fdd-8c1e-4bba-bda2-ea86f3fe302a)
 
 ## 🧠 Algorithm Workflows
 
