@@ -1,8 +1,8 @@
 const LeakyBucket = require('../lib/RateLimiter/leakeyBucket/lb');
 const TockenBucket = require('../lib/RateLimiter/tocken-bucket/tb');
 
-function leakeyBucketMiddleware(capacity, rate, key = 'tockenbucket') {
-    const bucket = (key === 'leakeybucket') ? new LeakyBucket(capacity, rate) : new TockenBucket(capacity, rate);
+function ratelimiterMiddleware(capacity, rate, key = 'tockenbucket') {
+    const bucket = (key === 'leakybucket') ? new LeakyBucket(capacity, rate) : new TockenBucket(capacity, rate);
     return (req, res, next) => {
         if (bucket.acquire()) {
             next();
@@ -11,4 +11,4 @@ function leakeyBucketMiddleware(capacity, rate, key = 'tockenbucket') {
         }
     };
 }
-module.exports = leakeyBucketMiddleware;
+module.exports = ratelimiterMiddleware;

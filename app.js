@@ -1,6 +1,6 @@
   var express = require('express');
   var logger = require('morgan');
-  var leakeyBucketMiddleware = require('./middleware/ratelimiter');
+  var ratelimiterMiddleware = require('./middleware/ratelimiter');
 
   var indexRouter = require('./routes/index');
 
@@ -8,7 +8,10 @@
 
   app.set('view engine', 'jade');
 
-  app.use(leakeyBucketMiddleware(300, 50, 'tockenbucket')); // capacity 300,  rate 50 tokens per second
+  // Apply rate limiter middleware
+  // You can switch between 'leakybucket' and 'tockenbucket' here
+  // app.use(ratelimiterMiddleware(300, 50, 'leakybucket')); // capacity 300,  rate 50 tokens per second
+  app.use(ratelimiterMiddleware(300, 50, 'tockenbucket')); // capacity 300,  rate 50 tokens per second
   app.use(logger('dev'));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
