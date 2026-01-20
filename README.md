@@ -4,7 +4,8 @@ This is a simple demonstration project exploring two fundamental rate-limiting a
 [Refer to this blog for a detailed understanding](https://blog.algomaster.io/p/rate-limiting-algorithms-explained-with-code)
 > [!IMPORTANT]  
 > **Note:** This repository is for **demonstration and educational purposes only**. It is not intended for production use.
-> **Note:** To check out the implementation check out the lib/ path.
+
+**Note:** To check out the implementation check out the lib/ path.
 ## 🚀 Overview
 Rate limiting is a strategy used to limit network traffic. It is implemented at the server side to prevent resource exhaustion and protect against DoS attacks.
 
